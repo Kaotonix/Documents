@@ -1,0 +1,25 @@
+{
+  "name": "magnit-slide-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "pack-template": "node scripts/pack-template.mjs",
+    "dev": "node server.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "cross-env NODE_ENV=production node server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  }
+}

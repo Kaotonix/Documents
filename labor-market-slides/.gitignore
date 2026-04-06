@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.pptx
+!assets/magnit-template.pptx
+!assets/Magnit-Branded-Template.pptx
+test-out.pptx
+.env
+.env.local
