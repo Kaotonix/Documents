@@ -1,11 +1,10 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "vite build",
-  "outputDirectory": "dist",
-  "framework": "vite",
   "functions": {
-    "api/export-pptx.js": {
-      "includeFiles": "assets/magnit-template.pptx"
+    "src/app/api/plan-deck/route.ts": {
+      "maxDuration": 120
+    },
+    "src/app/api/export-pptx/route.ts": {
+      "maxDuration": 120
     }
   }
 }
