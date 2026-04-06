@@ -1,10 +1,3 @@
 {
-  "functions": {
-    "src/app/api/plan-deck/route.ts": {
-      "maxDuration": 120
-    },
-    "src/app/api/export-pptx/route.ts": {
-      "maxDuration": 120
-    }
-  }
+  "version": 2
 }
