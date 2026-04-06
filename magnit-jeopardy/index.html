@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnit Jeopardy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-title">Magnit Jeopardy</div>
+          <div class="brand-subtitle">Contingent workforce edition</div>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="scorecard" role="status" aria-live="polite">
+          <div class="score-label">Score</div>
+          <div class="score-value" id="scoreValue">$0</div>
+        </div>
+        <button class="btn btn-secondary" id="resetBtn" type="button">
+          Reset game
+        </button>
+        <button class="btn btn-primary" id="shuffleBtn" type="button">
+          New board
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="instructions" aria-label="How to play">
+        <div class="instructions-inner">
+          <div class="instructions-title">How to play</div>
+          <ul class="instructions-list">
+            <li>Pick a tile to open a clue.</li>
+            <li>Click <strong>Show answer</strong>, then self-score: <strong>Correct</strong> or <strong>Incorrect</strong>.</li>
+            <li>In Jeopardy style, your response should be phrased as a question.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="board-wrap" aria-label="Game board">
+        <div class="board" id="board" role="grid" aria-label="Jeopardy board"></div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-left">
+          Built from publicly available Magnit site content.
+        </div>
+        <div class="footer-right">
+          Source reference: <a href="https://magnitglobal.com/" target="_blank" rel="noreferrer">magnitglobal.com</a>
+        </div>
+      </footer>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay" hidden></div>
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalBody"
+      hidden
+    >
+      <div class="modal-header">
+        <div class="modal-kicker" id="modalKicker"></div>
+        <div class="modal-title" id="modalTitle"></div>
+        <button class="icon-btn" id="closeModalBtn" type="button" aria-label="Close">
+          ✕
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="clue" id="clueText"></div>
+        <div class="answer" id="answerText" hidden></div>
+      </div>
+      <div class="modal-actions">
+        <div class="left-actions">
+          <div class="value-pill" id="valuePill">$0</div>
+        </div>
+        <div class="right-actions">
+          <button class="btn btn-secondary" id="showAnswerBtn" type="button">
+            Show answer
+          </button>
+          <button class="btn btn-success" id="correctBtn" type="button" disabled>
+            Correct
+          </button>
+          <button class="btn btn-danger" id="incorrectBtn" type="button" disabled>
+            Incorrect
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
